@@ -1,0 +1,20 @@
+BEGIN;
+
+INSERT INTO estacion(nombre, direccion)
+VALUES('Estacion Transac', 'Col La Paz');
+
+INSERT INTO tren(modelo, capacidad)
+VALUES('Modelo Transac', 34);
+
+COMMIT;
+
+BEGIN;
+
+INSERT INTO tren(modelo, capacidad)
+VALUES('Modelo Transac', 34);
+
+INSERT INTO estacion("id-estacion", nombre, direccion)
+VALUES(1, 'Estacion Transac', 'Col La Paz');
+
+COMMIT;
+

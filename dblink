@@ -1,0 +1,27 @@
+CREATE EXTENSION dblink;
+
+/* Consultar tables de otras DBS */
+SELECT * FROM 
+dblink('dbname=vicflores11
+	   port=5432
+	   host=127.0.0.1
+	   user=vicflores11
+	   password=vicflores2211',
+	  'SELECT id_vip, fecha FROM vip')
+	  AS datos_remotos(id_vip integer, fecha date);
+	  
+/* Cruzar informacion entre tablas remotas y locales */
+SELECT * FROM pasajero
+JOIN 
+dblink('dbname=vicflores11
+	   port=5432
+	   host=127.0.0.1
+	   user=vicflores11
+	   password=vicflores2211',
+	  'SELECT id_vip, fecha FROM vip')
+	  AS datos_remotos(id_vip integer, fecha date)
+ON pasajero.id_pasajero = datos_remotos.id_vip;
+	  
+	  
+	  
+	  

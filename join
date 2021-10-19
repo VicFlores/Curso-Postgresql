@@ -1,0 +1,40 @@
+/* Saber los viajes por pasajeros*/
+SELECT * FROM pasajero
+INNER JOIN viaje ON viaje.id_pasajero = pasajero.id_pasajero
+order by pasajero.id_pasajero;
+
+/* Saber que pasajeros no han hecho ningun viaje */
+
+SELECT * FROM pasajero
+LEFT JOIN viaje ON viaje.id_pasajero = pasajero.id_pasajero
+WHERE viaje.id_pasajero IS NULL
+ORDER BY pasajero.id_pasajero;
+
+/*Lo mismo pero al reves  */
+SELECT * FROM viaje
+RIGHT JOIN pasajero ON pasajero.id_pasajero = viaje.id_pasajero
+WHERE viaje.id_pasajero IS NULL
+ORDER BY pasajero.id_pasajero;
+
+/* Saber que tren tiene trayecto asignado */
+
+SELECT * FROM tren
+INNER JOIN trayecto ON tren.id_tren = trayecto.id_tren
+ORDER BY tren.id_tren;
+
+/* Saber que tren no tiene ningun trayecto asignado */
+SELECT * FROM tren
+LEFT JOIN trayecto ON tren.id_tren = trayecto.id_tren
+WHERE trayecto.id_tren IS NULL
+ORDER BY tren.id_tren;
+
+
+
+
+
+
+
+
+
+
+

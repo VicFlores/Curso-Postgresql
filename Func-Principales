@@ -1,0 +1,41 @@
+
+/* Actualizar informacion de un registro */
+INSERT INTO public.estacion(
+	"id-estacion", nombre, direccion)
+	VALUES (1, 'XXX', 'XXX')
+	ON CONFLICT ("id-estacion") 
+	DO UPDATE SET nombre = 'Southern Cross Melbourne', direccion = 'Australia';
+	
+/* Nos permite visualizar lo que hemos hecho */
+INSERT INTO public.estacion(
+	nombre, direccion)
+	VALUES ('Strunder', 'Aston Villa')
+	RETURNING *;
+	
+/* Buscar por algo en especifico */
+/* % al inicio es para palabras que terminan y % al final es viceversa */
+SELECT nombre from pasajero
+WHERE nombre LIKE '%o'
+
+/* Busca sin importar mayusculas y minusculas */
+SELECT nombre from pasajero
+WHERE nombre ILIKE 'o%';
+
+/* Ver que tren tiene un modelo null */
+SELECT * FROM tren
+WHERE modelo IS NULL;
+
+/* Ver que tren tiene un modelo not null */
+SELECT * FROM tren
+WHERE modelo IS NOT NULL;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

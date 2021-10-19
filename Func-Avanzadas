@@ -1,0 +1,38 @@
+/* COALESCE => compara dos valores y nos retorna cual no es nulo */
+/* cambia el valor nulo del campo por el que designemos nosotros */
+SELECT COALESCE(nombre, 'Valor vacio') as nombre FROM pasajero
+WHERE id_pasajero = 1;
+
+/* NULLIF => compara dos valores y retorna nul si son iguales */
+
+SELECT NULLIF(0,0);
+
+/* GREATEST => comparar un arreglo de valores y retorna el mayor */
+SELECT GREATEST(0,1,2,3,4,5,6,7,8,9,10);
+
+/* LEAST => comparar un arreglo de valores y retorna el menor */
+SELECT LEAST(0,1,2,3,4,5,6,7,8,9,10);
+
+/* Bloques anonimos => permite integrar condicionales dentro de una DB */
+SELECT id_pasajero, nombre, residencia, fecha_nacimiento,
+	CASE WHEN fecha_nacimiento > '2015-01-01' 
+		THEN 'Joven'ELSE 'Mayor' END
+FROM pasajero;
+
+/* Pasajeros con inial A y mostando los mayores y menores de edad */
+SELECT id_pasajero, nombre, residencia, fecha_nacimiento,
+	CASE WHEN nombre ILIKE 'a%'
+		THEN 'Nombre inial = A' ELSE 'Nombre inial != A' END AS Letra_inicial_A,
+	CASE WHEN (CURRENT_DATE - fecha_nacimiento) / 365 >= 18
+		THEN 'Mayor de 18 años' ELSE 'Menor de 18 años' END AS Mayor_Menor
+FROM pasajero;
+
+
+
+
+
+
+
+
+
+

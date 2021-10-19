@@ -1,0 +1,61 @@
+/* PL sin function */
+DO $$
+DECLARE
+	rec record;	
+	contador integer := 0;
+BEGIN
+	FOR rec IN SELECT * from pasajero LOOP
+		RAISE NOTICE 'Un pasajero se llama %', rec.nombre;
+		contador  := contador + 1;
+	END LOOP;
+	RAISE NOTICE 'El conteo es: %', contador;
+END
+$$
+
+/* PL con function que no retorna */
+CREATE FUNCTION importantePL()
+RETURNS void
+AS $$
+DECLARE
+	rec record;	
+	contador integer := 0;
+BEGIN
+	FOR rec IN SELECT * from pasajero LOOP
+		RAISE NOTICE 'Un pasajero se llama %', rec.nombre;
+		contador  := contador + 1;
+	END LOOP;
+	RAISE NOTICE 'El conteo es: %', contador;
+END
+$$
+LANGUAGE PLPGSQL;
+
+SELECT importantepl();
+
+/* PL con function que si retorna */
+CREATE FUNCTION importantePL2()
+RETURNS INTEGER
+AS $$
+DECLARE
+	rec record;	
+	contador integer := 0;
+BEGIN
+	FOR rec IN SELECT * from pasajero LOOP
+		RAISE NOTICE 'Un pasajero se llama %', rec.nombre;
+		contador  := contador + 1;
+	END LOOP;
+	RAISE NOTICE 'El conteo es: %', contador;
+	RETURN contador;
+END
+$$
+LANGUAGE PLPGSQL;
+
+SELECT importantepl2();
+
+
+
+
+
+
+
+
+

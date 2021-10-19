@@ -1,0 +1,38 @@
+
+INSERT INTO public.pasajero(nombre, residencia, fecha_nacimiento)
+	VALUES ('Vic Flores', 'Col. Santa Matilde', '2001-02-11'),
+	('Axel Aguiluz', 'Col. La Granjita', '2001-03-12'),
+	('Stephanie Batres', 'Col. Santa Anita', '2000-07-23'),
+	('Fernando Aguilar', 'Col. El Espino', '1999-07-20'),
+	('Sidny Flores', 'Col. Maravilla', '2000-02-20'),
+	('Madeleyne Cañada', 'Col. San Juan Opico', '2000-06-03'),
+	('Isenia Panameño', 'Col. Santa Gertrudis', '2002-01-05'),
+	('Krissia Figueroa', 'Col. El Roble', '1999-12-09'),
+	('Zaira Flores', 'Col. Porticos', '2001-08-15'),
+	('Kaylee Henriquez', 'Col. La Esperanza', '2001-05-17');
+	
+INSERT INTO public.tren(modelo, capacidad)
+	VALUES ('Babcock & Wilcox', 100),('Boeing Rotorcraft Systems', 123),
+	('Gothaer Waggonfabrik', 89),('Hanomag', 168),
+	('Carde y Escoriaza', 112),('De Dion-Bouton', 75),
+	('J. G. Brill Company', 180),('Toshiba', 130);
+	
+INSERT INTO public.estacion(nombre, direccion)
+	VALUES ('Southern Cross', 'Melbourne, Australia'),
+	('Hundertwasser Bahnhof', 'Uelzen, Alemania'),
+	('Centraal Station', 'Rotterdam, Holanda'),
+	('WTC Transportation Hub', 'Nueva York'),
+	('Grand Central Terminal', 'Nueva York'),
+	('Gare do Oriente', 'Lisboa, Portugal'),
+	('Gare de Strasbourg', 'Estrasburgo, Francia'),
+	('Gare de Liege-Guillemins', 'Lieja, Belgica');
+	
+INSERT INTO
+	
+	
+	select * from public.pasajero
+	select * from public.tren
+	select * from public.estacion
+	
+	
+	

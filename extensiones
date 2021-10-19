@@ -1,0 +1,7 @@
+CREATE EXTENSION fuzzystrmatch;
+
+/* Nos retorna la cantidad de cambios para que ambas palabras sean iguales */
+SELECT levenshtein('Vic', 'Victor')
+
+/* Compara dos palabras y nos dice de 0 a 4 que tan similares son */
+SELECT difference('Vic', 'Victor')

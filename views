@@ -1,0 +1,29 @@
+/* Vista => centralizar las consultas almacenandolas en una vista */
+
+/*Query ejemplo para vista volatil */
+SELECT *,
+CASE 
+WHEN fecha_nacimiento > '2015-01-01'
+THEN 'Mayor' ELSE 'Menor' END AS mayor_menor
+FROM pasajero
+ORDER BY mayor_menor;
+
+/* Vista Volátil: Consulta con data actualizada */
+SELECT * FROM rango_view;
+
+/*Query ejemplo para vista materializada */
+SELECT * from viaje
+WHERE inicio > '15:00:00';
+
+/* Vista Materializada: Consulta con data persistente (en memoria) */
+REFRESH MATERIALIZED VIEW despues_noche_view;
+SELECT * FROM despues_noche_view;
+
+DELETE FROM viaje 
+WHERE id_viaje = 1;
+
+
+
+
+
+
